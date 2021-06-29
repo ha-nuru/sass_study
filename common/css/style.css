@@ -1,0 +1,156 @@
+.danger {
+  color: red;
+  font-size: 25px;
+  font-weight: bold;
+  border: 1px solid blue;
+  background-color: green;
+}
+
+.myArticle {
+  border: 1px solid blue;
+}
+
+.mynote {
+  border: 2px solid red;
+}
+
+.mybox {
+  -webkit-transform: rotate(20deg);
+  transform: rotate(20deg);
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+  text-align: center;
+  text-transform: lowercase;
+  text-overflow: hidden;
+}
+
+nav a {
+  display: block;
+  padding: 6px 12px;
+  text-decoration: none;
+  font-family: Lucida Sans Unicode;
+  font-size: 20px;
+  font-weight: bold;
+  font-variant: small-caps;
+}
+
+.button-basic, .button-report, .button-submit {
+  border: none;
+  padding: 15px 30px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.button-report {
+  background-color: red;
+}
+
+.button-submit {
+  background-color: green;
+  color: white;
+}
+
+h2 {
+  font-size: 30px;
+  font-weight: 800;
+}
+
+#sec_1 h2 {
+  color: salmon;
+}
+
+#sec_2 h2 {
+  color: cadetblue;
+}
+
+#sec_3 h2 {
+  color: darkseagreen;
+}
+
+#sec_4 h2 {
+  color: mediumaquamarine;
+}
+
+.main {
+  display: block;
+  width: 200px;
+  margin-top: 20px;
+  padding: 10px;
+  color: #fff;
+  font-size: 14px;
+  background-color: darkseagreen;
+  border: 0;
+}
+
+button.a {
+  display: block;
+  background-color: blanchedalmond;
+  font-weight: 800;
+  color: #333;
+}
+
+button.b {
+  display: block;
+  background-color: red;
+  font-weight: 800;
+  color: #333;
+}
+
+button.c {
+  display: block;
+  background-color: blanchedalmond;
+  font-weight: 800;
+  color: #222;
+}
+
+.btn_normal, .btn_info, .btn_download {
+  display: block;
+  float: left;
+  width: 200px;
+  height: 40px;
+  margin-right: 20px;
+}
+
+.btn_normal:hover, .btn_info:hover, .btn_download:hover {
+  -webkit-box-shadow: 2px 2px 2px #bbb;
+          box-shadow: 2px 2px 2px #bbb;
+}
+
+.btn_info {
+  background-color: mediumaquamarine;
+}
+
+.btn_download {
+  background-color: firebrick;
+}
+
+@media screen and (max-width: 400px) {
+  .btn_normal, .btn_info, .btn_download {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .btn_normal, .btn_info, .btn_download {
+    width: 200px;
+    height: 200px;
+  }
+  .btn_normal:hover, .btn_info:hover, .btn_download:hover {
+    border: 1px solid #333;
+  }
+}
+
+.bg {
+  background-image: url(../images/...180108.png);
+}
+/*# sourceMappingURL=style.css.map */

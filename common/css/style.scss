@@ -1,0 +1,198 @@
+@mixin important-text {
+	color: red;
+	font-size: 25px;
+	font-weight: bold;
+	border: 1px solid blue;
+}
+
+.danger {
+	@include important-text;
+	background-color: green;
+}
+
+@mixin  bordered($color, $width) {
+	border : $width solid $color;
+}
+.myArticle {
+	@include bordered(blue, 1px);
+}
+.mynote {
+	@include bordered(red, 2px);
+}
+@mixin transform($property){
+	-webkit-transform : $property;
+	-ms-transform : $property;
+	transform : $property;
+}
+.mybox{
+	@include transform(rotate(20deg));
+}
+
+nav {
+	ul{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	li{
+		display: inline-block;
+		text : {
+			align : center;
+			transform: lowercase;
+			overflow: hidden;
+		}
+	}
+	a{
+		display: block;
+		padding: 6px 12px;
+		text-decoration: none;
+		font: {
+			family: Lucida Sans Unicode;
+			size:20px;
+			weight: bold;
+			variant: small-caps;
+		 }
+	}
+}
+
+.button-basic { 
+	border: none;
+	padding: 15px 30px;
+	text-align: center;
+	font-size: 16px;
+	cursor: pointer;
+}
+.button-report {
+	@extend .button-basic;
+	background-color: red;
+}
+.button-submit {
+	@extend .button-basic;
+	background-color: green;
+	color: white;
+}
+
+// //조건문 - 필요한 경우가 아니라면 괄호 없이
+// @if $support-legacy {
+
+// } @else {
+
+// }
+// //거짓값 테스트 할때 , false,null 대신 언제나 not 키워드를 사용
+// @if not index($list, $item) {
+
+// }
+// //언제나 변수 부분을 조건문의 왼쪽, 기대되는 결과를 오른쪽에 놓으시오.
+// @if $value == 42 {
+
+// }
+
+// // 조건에 따라 다른 결과를 반환하는 함수 안에서의 조건문은 반드시 함수가 조건문 블록 밖에서도 @return 문을 갖도록 하기
+// @function dummy($condition) {
+// 	@if $condition { 
+// 		@return true;
+// 	}
+// 	@return false;
+// }
+
+// // each 반복문 - list 
+// @each $theme in $themes {
+// 	.section-#{$theme} {
+// 		background-color : map-get ($colors, $theme)
+// 	}
+// }
+
+h2{
+	font-size: 30px;
+	font-weight: 800;
+
+	#sec_1 & {
+		color: salmon;
+	}
+	#sec_2 & {
+		color: cadetblue;
+	}
+	#sec_3 & {
+		color: darkseagreen;
+	}
+	#sec_4 & {
+		color: mediumaquamarine;
+	}
+}
+
+@mixin mybtn($bgc){
+	display: block;
+	width: 200px;
+	margin-top: 20px;
+	padding: 10px;
+	color: #fff;
+	font-size: 14px;
+	background-color: $bgc;
+	border: 0;
+}
+.main {
+	@include mybtn(darkseagreen)
+}
+
+@mixin mybtn($bgc: blanchedalmond, $font-color: #333){
+	display: block;
+	background-color: $bgc;
+	font-weight: 800;
+	color: $font-color;
+}
+button.a{
+	@include mybtn
+}
+button.b{
+	@include mybtn($bgc: red);
+}
+button.c{
+	@include mybtn($font-color:#222);
+}
+
+.btn_normal { 
+	display: block;
+	float: left;
+	width: 200px;
+	height: 40px;
+	margin-right: 20px;
+	&:hover{
+		box-shadow: 2px 2px 2px #bbb;
+	}
+}
+.btn_info { 
+	@extend .btn_normal;
+	background-color: mediumaquamarine;
+}
+.btn_download { 
+	@extend .btn_normal;
+	background-color: firebrick;
+}
+
+$width-small: 400px;
+@media screen and (max-width: $width-small){
+	.btn_normal{
+		width: 200px;
+		height: 200px;
+	}
+}
+
+$fwidth-small: "screen and (max-width: 400px)";
+
+@media #{$fwidth-small}{
+	.btn_normal{
+		width: 200px;
+		height: 200px;
+		&:hover{
+			border: 1px solid #333;
+		}
+	}
+}
+ㅏ
+//interpolation #{}
+//변수를 선택자와 속성 사이에서 사용하는 경우, #{}를 사용  
+$version: "180108";
+.bg {
+	background-image: url(../images/...#{$version}.png);
+}
+
